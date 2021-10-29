@@ -5,6 +5,11 @@
         </div>
         <div class="card-body">
             <form [formGroup]="formAdd" (ngSubmit)="Guardar()">
+              <button class="btn btn-info" type="submit" [disabled]="formAdd.invalid">Guardar</button>
+              <button class="btn btn-info" style="margin-left: 10px;" [attr.disabled]="true">Editar</button>
+              <button class="btn btn-info" style="margin-left: 10px;" [attr.disabled]="true">Delete</button>
+              <br>
+              <br>
               <div class="form-group">
                   <label for="">Id:</label>
                   <input type="text" class="form-control" formControlName="id" [attr.disabled]="true">
@@ -35,7 +40,6 @@
                   </div>
                 </div>
                 <br>
-                <input type="submit" value="Guardar" class="btn btn-danger" [disabled]="formAdd.invalid"/>
             </form>
         </div>
     </div>
