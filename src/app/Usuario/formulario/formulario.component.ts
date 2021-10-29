@@ -45,6 +45,7 @@ export class FormularioComponent implements OnInit {
     this.service.getUsuariosId(+this.idGlo)
     .subscribe(data => {
       this.Usuarios = data;
+      this.formAdd.get("rol")?.setValue(this.Usuarios.id_rol);
     });
   }
 

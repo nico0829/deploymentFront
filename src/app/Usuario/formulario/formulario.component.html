@@ -21,8 +21,8 @@
             </div>
             <br>
             <label>Rol:</label>
-              <select class="form-select" aria-label="Default select example" [(ngModel)]="Usuarios.id_rol" [attr.disabled]="true">
-                <option *ngFor="let objeto of roles" [ngValue]="objeto.id_rol">{{objeto.nombre}}</option>
+              <select class="form-select" aria-label="Default select example" formControlName="rol" [attr.disabled]="true">
+                <option *ngFor="let objeto of roles" [value]="objeto.id_rol">{{objeto.nombre}}</option>
               </select>
 
               <br>
