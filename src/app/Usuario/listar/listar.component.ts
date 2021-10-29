@@ -31,7 +31,6 @@ export class ListarComponent implements OnInit {
 
   Editar(Usuario:Usuario):void {
     localStorage.setItem("id",Usuario.id_usuario.toString());
-    //localStorage Permite almacenar datos en el navegador web hasta que esa información sea borrada
     this.router.navigate(["editar"]);
   }
 
