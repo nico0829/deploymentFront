@@ -29,11 +29,6 @@ export class ListarComponent implements OnInit {
     this.router.navigate(["add"]);
   }
 
-  Editar(Usuario:Usuario):void {
-    localStorage.setItem("id",Usuario.id_usuario.toString());
-    this.router.navigate(["editar"]);
-  }
-
   VisualizarForm(Usuario:Usuario):void {
     localStorage.setItem("id",Usuario.id_usuario.toString());
     this.router.navigate(["formulario"]);

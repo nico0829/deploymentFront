@@ -30,7 +30,7 @@ export class FormularioComponent implements OnInit {
       this.idGlo = id;
     }
 
-    this.Editar();
+    this.InicializarInfo();
     this.Roles();
     this.formAdd = this.fb.group({
       id:new FormControl('',[Validators.required]),
@@ -40,8 +40,7 @@ export class FormularioComponent implements OnInit {
     });
   }
 
-  Editar() {
-    console.log(this.idGlo);
+  InicializarInfo() {
     this.service.getUsuariosId(+this.idGlo)
     .subscribe(data => {
       this.Usuarios = data;
