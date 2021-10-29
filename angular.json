@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "crudAngular"
+  "defaultProject": "crudAngular",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

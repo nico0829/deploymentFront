@@ -1,0 +1,42 @@
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h3>Adicionar Usuarios</h3>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="formAdd" (ngSubmit)="Guardar()">
+              <div class="form-group">
+                  <label for="">Id:</label>
+                  <input type="text" class="form-control" formControlName="id" [attr.disabled]="true">
+              </div>
+              <br>
+                <div class="form-group">
+                    <label for="">Nombre de usuario:</label>
+                    <input type="text" class="form-control" formControlName="nombre">
+                    <div class="alert alert-danger" role="alert" *ngIf="formAdd.controls['nombre'].invalid && formAdd.controls['nombre'].touched">
+                      El campo nombre es requerido
+                    </div>
+                </div>
+                <br>
+                <label>Rol:</label>
+                <select class="form-select" aria-label="Default select example" formControlName="id_rol">
+                  <option *ngFor="let objeto of roles" [ngValue]="objeto.id_rol">{{objeto.nombre}}</option>
+                </select>
+                <br>
+                <div class="form-group">
+                  <label>Activo:</label>
+                  <div class="form-control">
+                    <label class="radio-inline">
+                    <input type="radio" value="1" formControlName="activo"> Sí
+                    </label>
+                    <label class="radio-inline" style="margin-left: 10px;">
+                    <input type="radio" value="2" formControlName="activo"> No
+                    </label>
+                  </div>
+                </div>
+                <br>
+                <input type="submit" value="Guardar" class="btn btn-danger" [disabled]="formAdd.invalid"/>
+            </form>
+        </div>
+    </div>
+</div>

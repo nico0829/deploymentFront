@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Usuarios</h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <div>
+                <button (click)="BuscarNombre()" class="btn btn-info">Consultar</button>
+                <button (click)="LimpiarCampo()" class="btn btn-info" style="margin-left: 10px;">Limpiar</button>
+              </div>
+              <br>
+              <div class="input-group mb-3">
+                <div>
+                  <span class="form-control">Nombre</span>
+                </div>
+                <input type="text" class="form-control" name="nombre" name="filterUsuario" placeholder="Search..." [(ngModel)]="filterUsuario" />
+              </div>
+            </div>
+          </div>
+          <br>
+          <div>
+            <button (click)="Nuevo()" class="btn btn-info">Crear</button>
+          </div>
+          <br>
+          <table class="table table-hover">
+              <thead>
+                  <tr class="text-center">
+                      <th>ID</th>
+                      <th>Nombre de Usuario</th>
+                      <th>Rol</th>
+                      <th>Activo</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let Usuario of Usuarios" class="text-center" [routerLink]="['/formulario']" (click)="VisualizarForm(Usuario)">
+                      <td>{{Usuario.id_usuario}}</td>
+                      <td>{{Usuario.nombre}}</td>
+                      <td>{{Usuario.id_rol == 1 ? 'Administrador' : Usuario.id_rol == 2 ? 'Auditor' : 'Auxiliar'}}</td>
+                      <td>{{Usuario.activo == "1" ? 'Sí':'No'}}</td>
+                  </tr>
+              </tbody>
+          </table>
+        </div>
+    </div>
+</div>
