@@ -50,7 +50,6 @@ export class FormularioComponent implements OnInit {
 
   ActualizarInfo():void {
     localStorage.setItem("id",this.idGlo.toString());
-    //localStorage Permite almacenar datos en el navegador web hasta que esa información sea borrada
     this.router.navigate(["editar"]);
   }
 
