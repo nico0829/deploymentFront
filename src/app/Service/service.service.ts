@@ -42,4 +42,8 @@ export class ServiceService {
   getRoles(): Observable<any> {
     return this.http.get<Roles>('http://localhost:8080/usuarios/consultarRoles');
   }
+
+  getConsecutivo(): Observable<number> {
+    return this.http.get<number>('http://localhost:8080/usuarios/consec');
+  }
 }

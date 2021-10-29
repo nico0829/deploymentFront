@@ -18,14 +18,12 @@ export class EditarComponent implements OnInit {
   formAdd!:FormGroup;
   ocupado!: Usuario;
   roles!:Roles[];
-  formBloqueo!:Boolean;
   idGlo!:String;
   nomTemp!:String;
 
   ngOnInit(): void {
     this.Roles();
     this.Editar();
-    this.formBloqueo = false;
     this.formAdd = this.fb.group({
       id:new FormControl('',[Validators.required]),
       nombre:new FormControl('',[Validators.required]),
@@ -42,7 +40,7 @@ export class EditarComponent implements OnInit {
     }
 
     this.Usuarios = await this.service.getUsuariosId(+id).toPromise();
-    console.log(this.Usuarios);
+
     this.formAdd.get("id")?.setValue(this.Usuarios.id_usuario);
     this.formAdd.get("nombre")?.setValue(this.Usuarios.nombre);
     this.formAdd.get("rol")?.setValue(this.Usuarios.id_rol);

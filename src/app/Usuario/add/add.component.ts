@@ -19,12 +19,14 @@ export class AddComponent implements OnInit {
   validador!:Boolean;
   formAdd!:FormGroup;
   roles!:Roles[];
+  consec!:number;
 
   constructor(private service:ServiceService, private router:Router, private fb:FormBuilder) { }
   //Cuando se adiciona como parámetro en un constructor se dice que está inyectando algo
 
   ngOnInit(): void {
     this.Roles();
+    this.Consecutivo();
     this.validador = true;
     this.formAdd = this.fb.group({
       nombre:new FormControl('',[Validators.required]),
@@ -58,6 +60,13 @@ export class AddComponent implements OnInit {
     this.service.getRoles()
     .subscribe(data => {
       this.roles = data
+    });
+  }
+
+  Consecutivo() {
+    this.service.getConsecutivo()
+    .subscribe(data => {
+      this.consec = data
     });
   }
 }
