@@ -69,10 +69,6 @@ export class EditarComponent implements OnInit {
     this.service.editarUsuario(Usuarios)
     .subscribe(data => {
       this.Usuarios = data
-      this.service.getUsuarios()
-        .subscribe(data => {
-          this.Usuarios = data
-        });
       this.router.navigate(["listar"]);
     });
   }

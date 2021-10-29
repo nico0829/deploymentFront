@@ -34,7 +34,7 @@
                   </tr>
               </thead>
               <tbody>
-                  <tr *ngFor="let Usuario of Usuarios" class="text-center" [routerLink]="['/formulario']" (click)="VisualizarForm(Usuario)">
+                  <tr *ngFor="let Usuario of Usuarios" class="text-center" (click)="VisualizarForm(Usuario)">
                       <td>{{Usuario.id_usuario}}</td>
                       <td>{{Usuario.nombre}}</td>
                       <td>{{Usuario.id_rol == 1 ? 'Administrador' : Usuario.id_rol == 2 ? 'Auditor' : 'Auxiliar'}}</td>
