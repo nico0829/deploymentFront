@@ -68,7 +68,6 @@ export class EditarComponent implements OnInit {
   ActualizarConfirmado(Usuarios:Usuario) {
     this.service.editarUsuario(Usuarios)
     .subscribe(data => {
-      this.Usuarios = data
       this.router.navigate(["listar"]);
     });
   }

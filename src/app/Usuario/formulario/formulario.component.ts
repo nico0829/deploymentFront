@@ -33,10 +33,10 @@ export class FormularioComponent implements OnInit {
     this.InicializarInfo();
     this.Roles();
     this.formAdd = this.fb.group({
-      id:new FormControl('',[Validators.required]),
-      nombre:new FormControl('',[Validators.required]),
-      rol:new FormControl('',[Validators.required]),
-      activo:new FormControl('',[Validators.required])
+      id:new FormControl(''),
+      nombre:new FormControl(''),
+      rol:new FormControl(''),
+      activo:new FormControl('')
     });
   }
 
@@ -63,10 +63,6 @@ export class FormularioComponent implements OnInit {
   Eliminar(Usuario:Usuario) {
     this.service.eliminarUsuario(Usuario)
     .subscribe(data => {
-      this.service.getUsuarios()
-        .subscribe(data => {
-          this.Usuarios = data
-        });
       this.router.navigate(["listar"])
     });
   }
